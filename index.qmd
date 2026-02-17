@@ -1,5 +1,5 @@
 ---
-title: "John McGrath"
+title: "Welcome to my Website"
 ---
 
 This is a Quarto website.
