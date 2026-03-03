@@ -3,3 +3,10 @@ title: "About"
 ---
 
 About this site
+image: DCUimg.jpg
+about:
+    template: jolla
+    links:
+     - icon: linkedin
+       text: linkedIn
+       href: https://www.linkedin.com/in/John Mc Grath/
