@@ -1,12 +1,10 @@
 ---
-title: "About"
----
-
-About this site
-image: DCUimg.jpg
+title: "John McGrath"
+image: IMG_9731.jpg.webp
 about:
-    template: jolla
-    links:
-     - icon: linkedin
-       text: linkedIn
-       href: https://www.linkedin.com/in/John Mc Grath/
+  template: jolla
+  links:
+    - icon: linkedin
+      text: linkedIn
+      href: https://www.linkedin.com/in/john-mc-grath-3a1a9938a
+---
