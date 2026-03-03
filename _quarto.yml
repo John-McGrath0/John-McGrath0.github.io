@@ -9,16 +9,11 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - href: resources.qmd
-        text: Resources
-      - href: documents/CV.pdf
-        text: CV
-        target: _blank
 
 format:
   html:
     theme:
-      - solana
+      - cosmo
       - brand
     css: styles.css
     toc: true
