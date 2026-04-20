@@ -4,18 +4,28 @@ project:
 
 website:
   title: "John McGrath"
+  favicon: favicon-32x32.png
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+    title: false
+    logo: logo_transparent.png
+    right:
+    - href: index.qmd
+      text: Home
+    - href: about.qmd
+      text: About
+    - href: JohnMcGrathCV1.pdf
+      text: CV
+      target: _blank
+  page-footer:
+    background: light
+    left: John McGrath, 2026
+
 
 format:
   html:
     theme:
-      - cosmo
-      - brand
-    css: styles.css
+    - morph
+    - styles.scss
     toc: true
 
 

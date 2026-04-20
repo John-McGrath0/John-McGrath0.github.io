@@ -4,5 +4,32 @@
   },
   "index.qmd": {
     "index.html": "806a0570"
+  },
+  "baa1028-lecture/about.qmd": {
+    "about.html": "734aaa05"
+  },
+  "baa1028-lecture/index.qmd": {
+    "index.html": "49774f5e"
+  },
+  "baa1028-lecture/Projects/index.qmd": {
+    "index.html": "0dd4a6a0"
+  },
+  "baa1028-lecture/test/about.qmd": {
+    "about.html": "067c0631"
+  },
+  "baa1028-lecture/test/index.qmd": {
+    "index.html": "d2fd6263"
+  },
+  "baa1028-lecture/test/Projects/index.qmd": {
+    "index.html": "516699fb"
+  },
+  "baa1028-lecture/test/Projects/list/project_1.qmd": {
+    "project_1.html": "7a125399"
+  },
+  "baa1028-lecture/test/Projects/list/project_2.qmd": {
+    "project_2.html": "50184eba"
+  },
+  "baa1028-lecture/test/Projects/list/project_3.qmd": {
+    "project_3.html": "6da17396"
   }
 }

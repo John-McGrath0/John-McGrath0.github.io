@@ -1,0 +1,65 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+$navy:      #1B2A4A;
+$slate:     #4A5568;
+$sky:       #3B82F6;
+$mint:      #10B981;
+$offwhite:  #F8F9FA;
+$charcoal:  #2D3748;
+$lightgrey: #E2E8F0;
+
+// Morph theme overrides
+
+$body-color:    $slate;
+$headings-color: $charcoal;
+$link-color:    $sky;
+$navbar-bg:     $navy;
+$navbar-fg:     $offwhite;
+$footer-bg:     $lightgrey;
+$footer-color:  $slate;
+
+/*-- scss:rules --*/
+
+body {
+  font-family: 'Outfit', sans-serif;
+}
+
+.navbar-brand img {
+  height: 90px;
+  max-height: 90px;
+  padding: 0;
+  width: auto;
+}
+
+.navbar {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+// Links
+a {
+  color: $sky;
+  &:hover {
+    color: $mint;
+  }
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.2rem;        
+  padding-left: 1.5rem;     
+  padding-right: 1.5rem;
+  font-weight: 500;
+}
+
+.page-columns {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.navbar-nav .nav-link.active {
+  color: $mint;
+  border-bottom: 2px solid $mint;
+}

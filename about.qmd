@@ -2,9 +2,15 @@
 title: "John McGrath"
 image: IMG_9731.jpg.webp
 about:
-  template: jolla
+  template: solana
+  image-width: 10cm
   links:
     - icon: linkedin
       text: linkedIn
       href: https://www.linkedin.com/in/john-mc-grath-3a1a9938a
+      target: _blank
+    - text: GitHub
+      icon: github
+      href: https://github.com/John-McGrath0/John-McGrath0.github.io
+      target: _blank
 ---
