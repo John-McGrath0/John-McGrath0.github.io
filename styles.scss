@@ -27,15 +27,17 @@ body {
 }
 
 .navbar-brand img {
-  height: 90px;
-  max-height: 90px;
+  height: 100px;
+  max-height: 100px;
   padding: 0;
   width: auto;
+  overflow: visible;
 }
 
 .navbar {
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  overflow: visible;
 }
 
 // Links
