@@ -11,11 +11,17 @@ website:
     right:
     - href: index.qmd
       text: Home
+      icon: house
     - href: about.qmd
-      text: About
+      text: About Me
+      icon: person-fill
     - href: JohnMcGrathCV1.pdf
-      text: CV
+      text: MY CV
+      icon: file-earmark-text
       target: _blank
+    - href: mailto:john.mcgrath42@mail.dcu.ie
+      text: Email
+      icon: envelope
   page-footer:
     background: light
     left: John McGrath, 2026
