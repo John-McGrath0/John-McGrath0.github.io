@@ -19,7 +19,7 @@ website:
       text: MY CV
       icon: file-earmark-text
       target: _blank
-    - href: mailto:john.mcgrath42@mail.dcu.ie
+    - href: "mailto:john.mcgrath42@mail.dcu.ie"
       text: Email
       icon: envelope
   page-footer:
