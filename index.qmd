@@ -1,7 +1,19 @@
 ---
-title: "Welcome to my Website"
+title: "John McGrath"
+image: IMG_9731.jpg.webp
+about:
+  template: solana
+  image-width: 10cm
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/john-mc-grath-3a1a9938a
+      target: _blank
+    - icon: github
+      text: GitHub
+      href: https://github.com/John-McGrath0
+      target: _blank
+    - href: "mailto:john.mcgrath42@mail.dcu.ie"
+      text: Email
+      icon: envelope
 ---
-
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
