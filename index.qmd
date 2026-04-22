@@ -17,3 +17,11 @@ about:
       text: Email
       icon: envelope
 ---
+Welcome to my e-portfolio.
+On this website you will find a collection of my projects, skills, and experiences
+from my time in university and beyond.
+
+Whether you're a potential employer,
+collaborator, or just curious - I hope you find something interesting.
+
+Feel free to explore my work, learn about me, or get in touch!
