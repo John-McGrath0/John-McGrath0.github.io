@@ -1,9 +1,8 @@
 ---
 title: "John McGrath"
-image: IMG_9731.jpg.webp
+image: Headshotforportfolio.jpg
 about:
-  template: solana
-  image-width: 10cm
+  template: jolla
   links:
     - icon: linkedin
       text: linkedIn
