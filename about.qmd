@@ -86,3 +86,17 @@ This includes building interactive dashboards and reports, and
 applying visualisation best practices to present data in a way that is both accessible and impactful.
 :::
 :::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.skill-card style="text-align: center;"}
+{{< fa file-excel size=3x >}}
+
+**Excel**
+
+Having worked with Excel since my first year, 
+I have developed a strong proficiency in the application over time. 
+This experience has given me a thorough command of its core features, including data organisation, 
+formulas, functions, and charting, as well as more advanced capabilities 
+such as pivot tables and data analysis tools.
+:::
+:::

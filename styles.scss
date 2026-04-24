@@ -93,7 +93,8 @@ a {
 }
 
 .grid {
-  gap: 5.5rem;
+  column-gap: 5.5rem;
+  row-gap: 2rem;
   padding: 0 2rem;
 }
 
