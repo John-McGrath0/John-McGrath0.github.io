@@ -1,6 +1,6 @@
 ---
 title: "John McGrath"
-image: IMG_9731.jpg.webp
+image: Images/IMG_9731.jpg.webp
 about:
   template: solana
   image-width: 10cm

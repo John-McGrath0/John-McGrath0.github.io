@@ -1,6 +1,6 @@
 ---
 title: "John McGrath"
-image: Headshotforportfolio.jpg
+image: Images/Headshotforportfolio.jpg
 about:
   template: jolla
   links:
