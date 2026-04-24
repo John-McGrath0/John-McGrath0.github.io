@@ -100,3 +100,28 @@ formulas, functions, and charting, as well as more advanced capabilities
 such as pivot tables and data analysis tools.
 :::
 :::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.skill-card style="text-align: center;"}
+{{< fa database size=3x >}}
+
+**Microsoft Access**
+
+I have developed a solid understanding of Microsoft Access 
+and its role as a relational database management tool. 
+This includes creating and managing databases, designing tables 
+and defining relationships between them, and building queries to extract and manipulate data.
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.skill-card style="text-align: center;"}
+{{< fa brands r-project size=3x >}}
+
+**R**
+
+Although this is an area I need to work on, I have developed a solid foundation in R, 
+gaining experience in using it as a tool for analysis and data exploration. 
+This includes working with data structures such as vectors, data frames, and lists.
+:::
+:::
