@@ -17,6 +17,44 @@ toc: false
     </div>
   </a>
 
-  
+  <a href="list/project2.qmd" class="project-card">
+    <img src="../Images/PowerBIdashboardimage.jpg" alt="PowerBI presentation"/>
+    <div class="overlay">
+      <h3>PowerBI presentation</h3>
+      <p>Converting sales data into clear visualisations using PowerBI</p>
+    </div>
+  </a>
+
+  <a href="list/project3.qmd" class="project-card">
+    <img src="../Images/MonteCarlosimulation.jpg" alt="Airline Booking Policy"/>
+    <div class="overlay">
+      <h3>Airline Booking Policy</h3>
+      <p>Generating a monte carlo simulation using Excel to determine an airlines optimal booking strategy</p>
+    </div>
+  </a>
+
+  <a href="list/project4.qmd" class="project-card">
+    <img src="../Images/Machinelearning.jpg" alt="ML algorithm comparison"/>
+    <div class="overlay">
+      <h3>ML algorithm comparison</h3>
+      <p>Applying ML classification models to a deepfake detection dataset using python</p>
+    </div>
+  </a>
+
+<a href="list/project5.qmd" class="project-card">
+    <img src="../Images/SQL.png" alt="SQL exam"/>
+    <div class="overlay">
+      <h3>SQL exam</h3>
+      <p>Database for a bookstore used for an SQL exam</p>
+    </div>
+  </a> 
+
+<a href="list/project6.qmd" class="project-card">
+    <img src="../Images/Lyten.jpg" alt="Lyten case report"/>
+    <div class="overlay">
+      <h3>Lyten case report</h3>
+      <p>Business strategy case study for Lyten's acquisition of Northvolt</p>
+    </div>
+  </a> 
 
   ```

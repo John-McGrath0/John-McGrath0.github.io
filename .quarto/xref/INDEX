@@ -37,5 +37,20 @@
   },
   "Projects/list/project1.qmd": {
     "project1.html": "c94b008c"
+  },
+  "Projects/list/project2.qmd": {
+    "project2.html": "f0592c35"
+  },
+  "Projects/list/project3.qmd": {
+    "project3.html": "b6d9a6bd"
+  },
+  "Projects/list/project4.qmd": {
+    "project4.html": "559fa2ce"
+  },
+  "Projects/list/project5.qmd": {
+    "project5.html": "612d30cf"
+  },
+  "Projects/list/project6.qmd": {
+    "project6.html": "c1afee50"
   }
 }

@@ -1,31 +1,31 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "John McGrath",
+    "objectID": "Projects/index.html",
+    "href": "Projects/index.html",
+    "title": "Projects",
     "section": "",
-    "text": "Welcome to my e-portfolio. On this website you will find a collection of my projects, skills, and experiences from my time in university and beyond.\nWhether you’re a potential employer, collaborator, or just curious - I hope you find something interesting.\nFeel free to explore my work, learn about me, or get in touch!"
+    "text": "Below is a collection of projects completed throughout my degree.\n\n\n\n  \n    \n    \n      Company Valuation\n      Analysis of Supermicro Computer as well as relative valuation and discounted cash flow\n    \n  \n\n  \n    \n    \n      PowerBI presentation\n      Converting sales data into clear visualisations using PowerBI\n    \n  \n\n  \n    \n    \n      Airline Booking Policy\n      Generating a monte carlo simulation using Excel to determine an airlines optimal booking strategy\n    \n  \n\n  \n    \n    \n      ML algorithm comparison\n      Applying ML classification models to a deepfake detection dataset using python\n    \n  \n\n\n    \n    \n      SQL exam\n      Database for a bookstore used for an SQL exam\n    \n   \n\n\n    \n    \n      Lyten case report\n      Business strategy case study for Lyten's acquisition of Northvolt"
   },
   {
-    "objectID": "baa1028-lecture/test/Projects/index.html",
-    "href": "baa1028-lecture/test/Projects/index.html",
-    "title": "My projects",
+    "objectID": "baa1028-lecture/test/index.html",
+    "href": "baa1028-lecture/test/index.html",
+    "title": "test",
     "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n[Learn about my projects -&gt;]"
   },
   {
-    "objectID": "baa1028-lecture/test/about.html",
-    "href": "baa1028-lecture/test/about.html",
+    "objectID": "baa1028-lecture/Projects/index.html",
+    "href": "baa1028-lecture/Projects/index.html",
+    "title": "projects",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+  },
+  {
+    "objectID": "baa1028-lecture/about.html",
+    "href": "baa1028-lecture/about.html",
     "title": "About",
     "section": "",
     "text": "About this site"
-  },
-  {
-    "objectID": "baa1028-lecture/index.html",
-    "href": "baa1028-lecture/index.html",
-    "title": "home",
-    "section": "",
-    "text": "this is a quarto website"
   },
   {
     "objectID": "about.html",
@@ -49,31 +49,31 @@
     "text": "Data Analytics Skills\nThese are the technical skills I have learned in my time in university.\n\n\n\n\nPython\nOver the past year, I have gained a strong foundation in Python, gaining hands-on experience with core concepts, including the language basics, control flow through conditional statements and loops, and working with key data structures. This foundation will enable me to apply my skills effectively while continuing to develop further abilities.\n\n\n\n\n\nSQL\nI have developed a comprehensive understanding of SQL and the core skills required to work effectively with relational databases. This includes the ability to design and interpret ERDs, create databases and tables, and write queries using a range of join clauses to retrieve and manipulate data across multiple tables.\n\n\n\n\n\nPowerBI\nPower BI has helped me to develop a strong understanding of data visualisation. It helped me learn the necessary skills to turn raw data into clear, understandable insights. This includes building interactive dashboards and reports, and applying visualisation best practices to present data in a way that is both accessible and impactful.\n\n\n\n\n\nExcel\nHaving worked with Excel since my first year, I have developed a strong proficiency in the application over time. This experience has given me a thorough command of its core features, including data organisation, formulas, functions, and charting, as well as more advanced capabilities such as pivot tables and data analysis tools.\n\n\n\n\n\nMicrosoft Access\nI have developed a solid understanding of Microsoft Access and its role as a relational database management tool. This includes creating and managing databases, designing tables and defining relationships between them, and building queries to extract and manipulate data.\n\n\n\n\n\nR\nAlthough this is an area I need to work on, I have developed a solid foundation in R, gaining experience in using it as a tool for analysis and data exploration. This includes working with data structures such as vectors, data frames, and lists."
   },
   {
-    "objectID": "baa1028-lecture/about.html",
-    "href": "baa1028-lecture/about.html",
+    "objectID": "baa1028-lecture/index.html",
+    "href": "baa1028-lecture/index.html",
+    "title": "home",
+    "section": "",
+    "text": "this is a quarto website"
+  },
+  {
+    "objectID": "baa1028-lecture/test/about.html",
+    "href": "baa1028-lecture/test/about.html",
     "title": "About",
     "section": "",
     "text": "About this site"
   },
   {
-    "objectID": "baa1028-lecture/Projects/index.html",
-    "href": "baa1028-lecture/Projects/index.html",
-    "title": "projects",
+    "objectID": "baa1028-lecture/test/Projects/index.html",
+    "href": "baa1028-lecture/test/Projects/index.html",
+    "title": "My projects",
     "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "baa1028-lecture/test/index.html",
-    "href": "baa1028-lecture/test/index.html",
-    "title": "test",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "John McGrath",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n[Learn about my projects -&gt;]"
-  },
-  {
-    "objectID": "Projects/index.html",
-    "href": "Projects/index.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Below is a collection of projects completed throughout my degree.\n\n\n\n  \n    \n    \n      Company Valuation\n      Analysis of Supermicro Computer as well as relative valuation and discounted cash flow"
+    "text": "Welcome to my e-portfolio. On this website you will find a collection of my projects, skills, and experiences from my time in university and beyond.\nWhether you’re a potential employer, collaborator, or just curious - I hope you find something interesting.\nFeel free to explore my work, learn about me, or get in touch!"
   }
 ]
