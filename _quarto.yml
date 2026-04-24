@@ -15,6 +15,9 @@ website:
     - href: about.qmd
       text: About Me
       icon: person-fill
+    - href: Projects/index.qmd
+      text: My Projects
+      icon: folder
     - href: JohnMcGrathCV1.pdf
       text: MY CV
       icon: file-earmark-text

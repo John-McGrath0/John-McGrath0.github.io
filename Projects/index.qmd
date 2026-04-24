@@ -1,0 +1,22 @@
+---
+title: "Projects"
+toc: false
+---
+
+*Below is a collection of projects completed throughout my degree.*
+
+```{=html}
+
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; padding: 1rem 0;">
+
+  <a href="list/project1.qmd" class="project-card">
+    <img src="../Images/business-valuation.jpg" alt="Company Valuation"/>
+    <div class="overlay">
+      <h3>Company Valuation</h3>
+      <p>Analysis of Supermicro Computer as well as relative valuation and discounted cash flow</p>
+    </div>
+  </a>
+
+  
+
+  ```
