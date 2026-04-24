@@ -42,6 +42,13 @@
     "text": "My name is John McGrath, I am 22 years of age, from Dublin, and I am a final year business studies student in DCU, specialising in data analytics. I am due to graduate in October 2026 with a second-class honours degree.\nI am hoping to begin my professional career working in the field of business analytics. Over the course of my studies, I developed a strong interest in this field. What began as an introduction to the topic in first and second year quickly grew into a passion for uncovering insights from raw data and using them to drive better business decisions.\nDuring my degree, I was fortunate enough to partake in a full-year Erasmus programme, where I studied in the University of Porto’s School of Economics and Management for my third year. During my studies here, I was able to further develop my technical skills through modules like business analytics and information management, where I learned a number of valuable analytical skills. On top of academic progression, this experience helped to deepen my cultural understanding and appreciation and overall, it was hugely beneficial for my personal development.\nOutside of university, my main passion is sports. I have been involved in sports for my whole life. I have tried many different sports over the years, and I currently play Gaelic Football and soccer, and I go to the gym. My love for sport is reflected in my current part-time job. I work for Experience Gaelic Games, where I teach tourists how to play football, hurling and handball. This is a unique opportunity, as I get to represent Irish culture and share it with people from all over the world."
   },
   {
+    "objectID": "about.html#data-analytics-skills",
+    "href": "about.html#data-analytics-skills",
+    "title": "John McGrath",
+    "section": "Data Analytics Skills",
+    "text": "Data Analytics Skills\nThese are the technical skills I have learned in my time in university.\n\n\n\nPython\nOver the past year, I have gained a strong foundation in Python, gaining hands-on experience with core concepts, including the language basics, control flow through conditional statements and loops, and working with key data structures. This foundation will enable me to apply my skills effectively while continuing to develop further abilities.\n\n\n\nSQL\nI have developed a comprehensive understanding of SQL and the core skills required to work effectively with relational databases. This includes the ability to design and interpret ERDs, create databases and tables, and write queries using a range of join clauses to retrieve and manipulate data across multiple tables."
+  },
+  {
     "objectID": "baa1028-lecture/about.html",
     "href": "baa1028-lecture/about.html",
     "title": "About",

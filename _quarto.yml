@@ -33,6 +33,8 @@ format:
     - morph
     - styles.scss
     toc: true
+    filters:
+      - fontawesome
 
 
 

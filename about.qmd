@@ -38,3 +38,34 @@ and I go to the gym. My love for sport is reflected in my current part-time job.
 I work for Experience Gaelic Games, where I teach tourists how to play football, 
 hurling and handball. This is a unique opportunity, as I get to represent Irish culture
 and share it with people from all over the world.
+
+## Data Analytics Skills
+
+*These are the technical skills I have learned in my time in university.*
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4 style="text-align: center;"}
+{{< fa brands python size=3x >}}
+
+**Python**
+
+Over the past year, I have gained a strong foundation in Python, 
+gaining hands-on experience with core concepts, 
+including the language basics, control flow through conditional statements and loops, 
+and working with key data structures. This foundation will enable me to apply my skills 
+effectively while continuing to develop further abilities.
+:::
+
+
+::: {.g-col-12 .g-col-md-4 style="text-align: center;"}
+{{< fa code size=3x >}}
+
+**SQL**
+
+I have developed a comprehensive understanding of SQL and the core skills 
+required to work effectively with relational databases. 
+This includes the ability to design and interpret ERDs, 
+create databases and tables, and write queries using a range of join clauses 
+to retrieve and manipulate data across multiple tables.
+:::
