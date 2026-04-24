@@ -12,6 +12,7 @@ about:
       icon: github
       href: https://github.com/John-McGrath0/John-McGrath0.github.io
       target: _blank
+toc: false
 ---
 
 ## About Me
@@ -45,7 +46,8 @@ and share it with people from all over the world.
 
 ::: {.grid}
 
-::: {.g-col-12 .g-col-md-4 style="text-align: center;"}
+::: {.g-col-12 .g-col-md-4}
+::: {.skill-card style="text-align: center;"}
 {{< fa brands python size=3x >}}
 
 **Python**
@@ -56,9 +58,10 @@ including the language basics, control flow through conditional statements and l
 and working with key data structures. This foundation will enable me to apply my skills 
 effectively while continuing to develop further abilities.
 :::
+:::
 
-
-::: {.g-col-12 .g-col-md-4 style="text-align: center;"}
+::: {.g-col-12 .g-col-md-4}
+::: {.skill-card style="text-align: center;"}
 {{< fa code size=3x >}}
 
 **SQL**
@@ -68,4 +71,18 @@ required to work effectively with relational databases.
 This includes the ability to design and interpret ERDs, 
 create databases and tables, and write queries using a range of join clauses 
 to retrieve and manipulate data across multiple tables.
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.skill-card style="text-align: center;"}
+{{< fa chart-line size=3x >}}
+
+**PowerBI**
+
+Power BI has helped me to develop a strong understanding of data visualisation. 
+It helped me learn the necessary skills to turn raw data into clear, understandable insights. 
+This includes building interactive dashboards and reports, and 
+applying visualisation best practices to present data in a way that is both accessible and impactful.
+:::
 :::
