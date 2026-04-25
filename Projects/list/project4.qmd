@@ -166,13 +166,13 @@ print(summary.to_string())
 ```
 
 ### Model Performance Comparison
-![](../../images/model_comparison_1.jpg)
+![](../../Images/model_comparison_1.jpg)
 
 ### Confusion Matrices
-![](../../images/confusion_matrices_1.jpg)
+![](../../Images/confusion_matrices_1.jpg)
 
 ### Feature Importance
-![](../../images/feature_importance.jpg)
+![](../../Images/feature_importance.jpg)
 
 ## Project Files
 To view the Python file and project report, click the links.

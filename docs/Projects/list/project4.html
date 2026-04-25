@@ -191,7 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="libraries-used" class="level2">
 <h2 class="anchored" data-anchor-id="libraries-used">Libraries Used</h2>
-<div id="62a50e2c" class="cell" data-execution_count="1">
+<div id="a609ec9d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
@@ -211,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="data-preprocessing" class="level2">
 <h2 class="anchored" data-anchor-id="data-preprocessing">Data Preprocessing</h2>
 <p>The dataset was loaded and cleaned by removing irrelevant columns. Categorical variables were encoded using a Label Encoder and the target label was converted to a binary format.</p>
-<div id="da0e7fb8" class="cell" data-execution_count="2">
+<div id="786efd56" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'deepfake_detection_metadata_dataset.csv.xlsx'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'generation_method'</span>, <span class="st">'media_id'</span>])</span>
@@ -227,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="feature-selection-traintest-split" class="level2">
 <h2 class="anchored" data-anchor-id="feature-selection-traintest-split">Feature Selection &amp; Train/Test Split</h2>
 <p>Nine features were selected based on their relevance to deepfake detection. The data was split 80/20 into training and test sets using stratified sampling to preserve class balance.</p>
-<div id="1ab55c0b" class="cell" data-execution_count="3">
+<div id="65367851" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>FEATURES <span class="op">=</span> [</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'media_type'</span>, <span class="st">'content_category'</span>, <span class="st">'face_count'</span>, <span class="st">'audio_present'</span>,</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'lip_sync_score'</span>, <span class="st">'visual_artifacts_score'</span>, <span class="st">'compression_level'</span>,</span>
@@ -249,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="model-training-evaluation" class="level2">
 <h2 class="anchored" data-anchor-id="model-training-evaluation">Model Training &amp; Evaluation</h2>
 <p>Four models were trained and evaluated — Logistic Regression, Random Forest, Gradient Boosting, and SVM. Each was assessed using accuracy, precision, recall, F1-score, and 5-fold cross validation.</p>
-<div id="162f82d6" class="cell" data-execution_count="4">
+<div id="5b96bc84" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>models <span class="op">=</span> {</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Logistic Regression'</span>: {</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'model'</span>: LogisticRegression(C<span class="op">=</span><span class="fl">1.0</span>, max_iter<span class="op">=</span><span class="dv">1000</span>, random_state<span class="op">=</span><span class="dv">42</span>),</span>
@@ -300,7 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="feature-importance" class="level2">
 <h2 class="anchored" data-anchor-id="feature-importance">Feature Importance</h2>
 <p>The Random Forest model was used to rank the importance of each feature in predicting whether media was real or fake.</p>
-<div id="6d8259ad" class="cell" data-execution_count="5">
+<div id="f0db9cf4" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rf_model <span class="op">=</span> models[<span class="st">'Random Forest'</span>][<span class="st">'model'</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>importances <span class="op">=</span> pd.Series(rf_model.feature_importances_, index<span class="op">=</span>FEATURES)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>importances_sorted <span class="op">=</span> importances.sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
@@ -312,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="results-summary" class="level2">
 <h2 class="anchored" data-anchor-id="results-summary">Results Summary</h2>
-<div id="e8051e86" class="cell" data-execution_count="6">
+<div id="0af30342" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    name: {</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Accuracy (%)'</span>:  <span class="bu">round</span>(v[<span class="st">'accuracy'</span>]  <span class="op">*</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
@@ -328,15 +328,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="model-performance-comparison" class="level3">
 <h3 class="anchored" data-anchor-id="model-performance-comparison">Model Performance Comparison</h3>
-<p><img src="../../images/model_comparison_1.jpg" class="img-fluid"></p>
+<p><img src="../../Images/model_comparison_1.jpg" class="img-fluid"></p>
 </section>
 <section id="confusion-matrices" class="level3">
 <h3 class="anchored" data-anchor-id="confusion-matrices">Confusion Matrices</h3>
-<p><img src="../../images/confusion_matrices_1.jpg" class="img-fluid"></p>
+<p><img src="../../Images/confusion_matrices_1.jpg" class="img-fluid"></p>
 </section>
 <section id="feature-importance-1" class="level3">
 <h3 class="anchored" data-anchor-id="feature-importance-1">Feature Importance</h3>
-<p><img src="../../images/feature_importance.jpg" class="img-fluid"></p>
+<p><img src="../../Images/feature_importance.jpg" class="img-fluid"></p>
 </section>
 </section>
 <section id="project-files" class="level2">
