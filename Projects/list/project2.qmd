@@ -1,0 +1,17 @@
+---
+title: "Agrifoods Dashboard"
+toc: false
+---
+
+## Overview
+
+This was a group project I did with five other students using Power BI. 
+The objective was to take data from an Excel spreadsheet containing information 
+about a fictional company called Agrifoods. We then had to upload the data to Power BI, 
+where we could create visualisations and generate insights about the crucial information 
+contained in the spreadsheet.
+
+## Project Files
+To view the report and the Power BI dashboards, click the links.
+[View Dashboard](../projectfiles/Agrifoods-dashboard.pbix){.btn .btn-outline-primary}
+[View PDF Report](../projectfiles/Agrifoods-report.pdf){.btn .btn-outline-primary target="_blank"}

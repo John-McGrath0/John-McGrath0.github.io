@@ -1,5 +1,26 @@
 [
   {
+    "objectID": "Projects/list/project2.html",
+    "href": "Projects/list/project2.html",
+    "title": "Agrifoods Dashboard",
+    "section": "",
+    "text": "This was a group project I did with five other students using Power BI. The objective was to take data from an Excel spreadsheet containing information about a fictional company called Agrifoods. We then had to upload the data to Power BI, where we could create visualisations and generate insights about the crucial information contained in the spreadsheet."
+  },
+  {
+    "objectID": "Projects/list/project2.html#overview",
+    "href": "Projects/list/project2.html#overview",
+    "title": "Agrifoods Dashboard",
+    "section": "",
+    "text": "This was a group project I did with five other students using Power BI. The objective was to take data from an Excel spreadsheet containing information about a fictional company called Agrifoods. We then had to upload the data to Power BI, where we could create visualisations and generate insights about the crucial information contained in the spreadsheet."
+  },
+  {
+    "objectID": "Projects/list/project2.html#project-files",
+    "href": "Projects/list/project2.html#project-files",
+    "title": "Agrifoods Dashboard",
+    "section": "Project Files",
+    "text": "Project Files\nTo view the report and the Power BI dashboards, click the links. View Dashboard View PDF Report"
+  },
+  {
     "objectID": "Projects/index.html",
     "href": "Projects/index.html",
     "title": "Projects",
@@ -75,5 +96,26 @@
     "title": "John McGrath",
     "section": "",
     "text": "Welcome to my e-portfolio. On this website you will find a collection of my projects, skills, and experiences from my time in university and beyond.\nWhether you’re a potential employer, collaborator, or just curious - I hope you find something interesting.\nFeel free to explore my work, learn about me, or get in touch!"
+  },
+  {
+    "objectID": "Projects/list/project1.html",
+    "href": "Projects/list/project1.html",
+    "title": "Company Valuation",
+    "section": "",
+    "text": "This was a group project that I did while on Erasmus in a corporate finance module. I was in a group with one other student, and we were assigned to a company in the computer hardware industry: Supermicro. We had to conduct a financial analysis of the company and then perform a relative valuation using market multiples and a discounted cash flow."
+  },
+  {
+    "objectID": "Projects/list/project1.html#overview",
+    "href": "Projects/list/project1.html#overview",
+    "title": "Company Valuation",
+    "section": "",
+    "text": "This was a group project that I did while on Erasmus in a corporate finance module. I was in a group with one other student, and we were assigned to a company in the computer hardware industry: Supermicro. We had to conduct a financial analysis of the company and then perform a relative valuation using market multiples and a discounted cash flow."
+  },
+  {
+    "objectID": "Projects/list/project1.html#project-files",
+    "href": "Projects/list/project1.html#project-files",
+    "title": "Company Valuation",
+    "section": "Project Files",
+    "text": "Project Files\nto view the full report and Excel file with our calculations, click the links. View Excel File View PDF Report"
   }
 ]

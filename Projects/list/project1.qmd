@@ -1,0 +1,17 @@
+---
+title: "Company Valuation"
+toc: false
+---
+
+## Overview
+
+This was a group project that I did while on Erasmus in a corporate finance module.
+I was in a group with one other student, and we were assigned to a company 
+in the computer hardware industry: Supermicro. We had to conduct a financial analysis of the company 
+and then perform a relative valuation using market multiples and a discounted cash flow.
+
+## Project Files
+
+to view the full report and Excel file with our calculations, click the links.
+[View Excel File](../projectfiles/company-valuation.xlsx){.btn .btn-outline-primary}
+[View PDF Report](../projectfiles/SMCI_report.pdf){.btn .btn-outline-primary target="_blank"}
