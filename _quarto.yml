@@ -16,10 +16,13 @@ website:
       text: About Me
       icon: person-fill
     - href: Projects/index.qmd
-      text: My Projects
+      text: Projects
       icon: folder
+    - href: reflection.qmd
+      text: Reflection
+      icon: journal-text
     - href: JohnMcGrathCV1.pdf
-      text: MY CV
+      text: CV
       icon: file-earmark-text
       target: _blank
     - href: "mailto:john.mcgrath42@mail.dcu.ie"
