@@ -1,68 +1,59 @@
 {
   "about.qmd": {
-    "about.html": "8a3071af"
-  },
-  "index.qmd": {
-    "index.html": "806a0570"
+    "about.html": "59dec610"
   },
   "baa1028-lecture/about.qmd": {
-    "about.html": "734aaa05"
+    "about.html": "a6e4b746"
   },
   "baa1028-lecture/index.qmd": {
-    "index.html": "49774f5e"
+    "index.html": "64107522"
   },
   "baa1028-lecture/Projects/index.qmd": {
-    "index.html": "0dd4a6a0"
+    "index.html": "e3520be7"
   },
   "baa1028-lecture/test/about.qmd": {
-    "about.html": "067c0631"
+    "about.html": "1871f155"
   },
   "baa1028-lecture/test/index.qmd": {
-    "index.html": "d2fd6263"
+    "index.html": "5853eb4f"
   },
   "baa1028-lecture/test/Projects/index.qmd": {
-    "index.html": "516699fb"
+    "index.html": "43ea6125"
   },
   "baa1028-lecture/test/Projects/list/project_1.qmd": {
-    "project_1.html": "7a125399"
+    "project_1.html": "98ab9989"
   },
   "baa1028-lecture/test/Projects/list/project_2.qmd": {
-    "project_2.html": "50184eba"
+    "project_2.html": "93e63e04"
   },
   "baa1028-lecture/test/Projects/list/project_3.qmd": {
-    "project_3.html": "6da17396"
+    "project_3.html": "b01fcc61"
+  },
+  "index.qmd": {
+    "index.html": "3e34f142"
   },
   "Projects/index.qmd": {
-    "index.html": "9555d48c"
+    "index.html": "7fd60f5b"
   },
   "Projects/list/project1.qmd": {
-    "project1.html": "c94b008c"
+    "project1.html": "b7301ad1"
   },
   "Projects/list/project2.qmd": {
-    "project2.html": "f0592c35"
+    "project2.html": "0817453c"
   },
   "Projects/list/project3.qmd": {
-    "project3.html": "b6d9a6bd"
+    "project3.html": "5b19854c"
   },
   "Projects/list/project4.qmd": {
-    "project4.html": "559fa2ce"
+    "project4.html": "5a897f74"
   },
   "Projects/list/project5.qmd": {
-    "project5.html": "612d30cf"
+    "project5.html": "9a2f5edb"
   },
   "Projects/list/project6.qmd": {
-    "project6.html": "c1afee50"
-  },
-  "Reflection.qmd": {
-    "Reflection.html": "6514ce52"
-  },
-  "docs/reflection.qmd": {
-    "reflection.html": "c076fe6b"
+    "project6.html": "bec928f9"
   },
   "reflection.qmd": {
-    "reflection.html": "824acaae"
-  },
-  "docs/Reflection.qmd": {
-    "Reflection.html": "2a0cb5de"
+    "reflection.html": "1ef10fd6"
   }
 }
