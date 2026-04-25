@@ -1,5 +1,26 @@
 [
   {
+    "objectID": "Projects/list/project6.html",
+    "href": "Projects/list/project6.html",
+    "title": "Case Study: Lyten Strategy Report",
+    "section": "",
+    "text": "This project was a business strategy report on a specific case study: Californian battery start-up, Lyten’s acquisition of bankrupt Swedish battery manufacturer, Northvolt. The report had three main aspects to address: firstly, what were the main strategic issues that Lyten were facing in the wake of their acquisition. Secondly, determine whether their acquisition reflected a coherent internationalization strategy or premature global scaling. And finally, evaluate the trade-off between geopolitical alignment and commercial flexibility presented in the case."
+  },
+  {
+    "objectID": "Projects/list/project6.html#overview",
+    "href": "Projects/list/project6.html#overview",
+    "title": "Case Study: Lyten Strategy Report",
+    "section": "",
+    "text": "This project was a business strategy report on a specific case study: Californian battery start-up, Lyten’s acquisition of bankrupt Swedish battery manufacturer, Northvolt. The report had three main aspects to address: firstly, what were the main strategic issues that Lyten were facing in the wake of their acquisition. Secondly, determine whether their acquisition reflected a coherent internationalization strategy or premature global scaling. And finally, evaluate the trade-off between geopolitical alignment and commercial flexibility presented in the case."
+  },
+  {
+    "objectID": "Projects/list/project6.html#project-files",
+    "href": "Projects/list/project6.html#project-files",
+    "title": "Case Study: Lyten Strategy Report",
+    "section": "Project Files",
+    "text": "Project Files\nTo view the full report, click the link. View PDF Report"
+  },
+  {
     "objectID": "Projects/list/project4.html",
     "href": "Projects/list/project4.html",
     "title": "Machine Learning Algorithm Comparison",
@@ -201,5 +222,47 @@
     "title": "Airline Booking Policy",
     "section": "Project Files",
     "text": "Project Files\nTo view the Excel file containing the simulation, click the link. View Excel File"
+  },
+  {
+    "objectID": "Projects/list/project5.html",
+    "href": "Projects/list/project5.html",
+    "title": "SQL exam: Hotel booking system",
+    "section": "",
+    "text": "This SQL database was created for an exam. It involved designing and implementing a relational database for a hotel reservation system called Bookify. The database was built using SQL and covers core operations such as managing guests, rooms, and reservations. It demonstrates the use of table creation, data insertion, joins, and aggregate functions."
+  },
+  {
+    "objectID": "Projects/list/project5.html#overview",
+    "href": "Projects/list/project5.html#overview",
+    "title": "SQL exam: Hotel booking system",
+    "section": "",
+    "text": "This SQL database was created for an exam. It involved designing and implementing a relational database for a hotel reservation system called Bookify. The database was built using SQL and covers core operations such as managing guests, rooms, and reservations. It demonstrates the use of table creation, data insertion, joins, and aggregate functions."
+  },
+  {
+    "objectID": "Projects/list/project5.html#database-setup",
+    "href": "Projects/list/project5.html#database-setup",
+    "title": "SQL exam: Hotel booking system",
+    "section": "Database Setup",
+    "text": "Database Setup\nThe database was created and three core tables were defined — Guest, Room, and Reservation. Foreign keys were used to link reservations to both guests and rooms.\nCREATE DATABASE BookifyDB0;\n\nCREATE TABLE Guest (\n    Guest_ID INT PRIMARY KEY,\n    Full_name VARCHAR(30),\n    Email VARCHAR(30)\n);\n\nCREATE TABLE Room (\n    Room_ID INT PRIMARY KEY,\n    Price FLOAT,\n    typeroom VARCHAR(10)\n);\n\nCREATE TABLE Reservation (\n    Reservation_ID INT PRIMARY KEY,\n    Guest_ID INT,\n    Room_ID INT,\n    NO_of_Guest INT,\n    Reservation_date DATE,\n    FOREIGN KEY (Guest_ID) REFERENCES Guest (Guest_ID),\n    FOREIGN KEY (Room_ID) REFERENCES Room (Room_ID)\n);"
+  },
+  {
+    "objectID": "Projects/list/project5.html#inserting-data",
+    "href": "Projects/list/project5.html#inserting-data",
+    "title": "SQL exam: Hotel booking system",
+    "section": "Inserting Data",
+    "text": "Inserting Data\nSample data was inserted into each table to populate the database for querying.\nINSERT INTO Guest (Guest_ID, Full_name, Email) VALUES\n(1, 'Alex Smith', 'a.s@mail.com'),\n(2, 'Bobby Johnson', 'b.j@mail.com'),\n(3, 'Mike Davis', 'm.d@mail.com');\n\nINSERT INTO Room (Room_ID, Price, typeroom) VALUES\n(101, 100, 'Single'),\n(102, 120, 'Double'),\n(103, 100, 'Double'),\n(104, 150, 'Single');\n\nINSERT INTO Reservation (Reservation_ID, Guest_ID, Room_ID, NO_of_Guest, Reservation_date) VALUES\n(1, 1, 101, 1, '2025-11-15'),\n(2, 1, 101, 1, '2025-11-16'),\n(3, 2, 102, 1, '2025-11-15'),\n(4, 3, 103, 2, '2025-11-14'),\n(5, 2, 103, 1, '2025-11-15');"
+  },
+  {
+    "objectID": "Projects/list/project5.html#queries",
+    "href": "Projects/list/project5.html#queries",
+    "title": "SQL exam: Hotel booking system",
+    "section": "Queries",
+    "text": "Queries\n\nRetrieve All Room Types\nSELECT typeroom FROM Room;\n\n\nReservations Ordered by Date\nSELECT Reservation_date FROM Reservation \nORDER BY Reservation_date DESC;\n\n\nAdd New Guests\nINSERT INTO Guest (Guest_ID, Full_name, Email) VALUES\n(4, 'Ewan Connolly', 'e.c@mail.com'),\n(5, 'Maya Evans', 'm.e@mail.com');\n\n\nAdd New Reservation\nINSERT INTO Reservation (Reservation_ID, Guest_ID, Room_ID, NO_of_Guest, Reservation_date) VALUES\n(6, 4, 104, 1, '2025-11-26');\n\n\nUpdate a Reservation Date\nUPDATE Reservation\nSET Reservation_date = '2025-11-13'\nWHERE Guest_ID = 3;\n\n\nAverage Room Price\nSELECT AVG(Price) FROM Room;\n\n\nRooms Priced Above €110\nSELECT Room_ID, Price, typeroom FROM Room\nWHERE Price &gt; 110;\n\n\nGuests with Reservations on 15th November\nSELECT DISTINCT(Full_Name) FROM Guest\nINNER JOIN Reservation ON Guest.Guest_ID = Reservation.Guest_ID\nWHERE Reservation_date = '2025-11-15';\n\n\nAll Reservations with Guest Names\nSELECT Reservation_ID, Full_Name AS Total_Reservations FROM Reservation\nFULL OUTER JOIN Guest ON Reservation.Guest_ID = Guest.Guest_ID\nORDER BY Total_Reservations DESC;"
+  },
+  {
+    "objectID": "Projects/list/project5.html#project-files",
+    "href": "Projects/list/project5.html#project-files",
+    "title": "SQL exam: Hotel booking system",
+    "section": "Project Files",
+    "text": "Project Files\nTo view the SQL file, click the link. View SQL File"
   }
 ]

@@ -1,0 +1,19 @@
+---
+title: "Case Study: Lyten Strategy Report"
+toc: false
+---
+
+## Overview
+
+This project was a business strategy report on a specific case study: 
+Californian battery start-up, Lyten’s acquisition of bankrupt Swedish battery manufacturer, 
+Northvolt. The report had three main aspects to address: firstly, what were the 
+main strategic issues that Lyten were facing in the wake of their acquisition. 
+Secondly, determine whether their acquisition reflected a coherent internationalization strategy 
+or premature global scaling. And finally, evaluate the trade-off between geopolitical alignment 
+and commercial flexibility presented in the case. 
+
+## Project Files
+
+To view the full report, click the link.
+[View PDF Report](../projectfiles/BAA1019LytenCaseStudy.pdf){.btn .btn-outline-primary target="_blank"}

@@ -1,0 +1,138 @@
+---
+title: "SQL exam: Hotel booking system"
+toc: false
+---
+
+## Overview
+
+This SQL database was created for an exam. 
+It involved designing and implementing a relational database for a hotel reservation system 
+called Bookify. The database was built using SQL and covers core operations such as managing guests, 
+rooms, and reservations. It demonstrates the use of table creation, data insertion, 
+joins, and aggregate functions. 
+
+## Database Setup
+
+The database was created and three core tables were defined — Guest, Room, and Reservation. 
+Foreign keys were used to link reservations to both guests and rooms.
+
+```sql
+CREATE DATABASE BookifyDB0;
+
+CREATE TABLE Guest (
+    Guest_ID INT PRIMARY KEY,
+    Full_name VARCHAR(30),
+    Email VARCHAR(30)
+);
+
+CREATE TABLE Room (
+    Room_ID INT PRIMARY KEY,
+    Price FLOAT,
+    typeroom VARCHAR(10)
+);
+
+CREATE TABLE Reservation (
+    Reservation_ID INT PRIMARY KEY,
+    Guest_ID INT,
+    Room_ID INT,
+    NO_of_Guest INT,
+    Reservation_date DATE,
+    FOREIGN KEY (Guest_ID) REFERENCES Guest (Guest_ID),
+    FOREIGN KEY (Room_ID) REFERENCES Room (Room_ID)
+);
+```
+
+## Inserting Data
+
+Sample data was inserted into each table to populate the database for querying.
+
+```sql
+INSERT INTO Guest (Guest_ID, Full_name, Email) VALUES
+(1, 'Alex Smith', 'a.s@mail.com'),
+(2, 'Bobby Johnson', 'b.j@mail.com'),
+(3, 'Mike Davis', 'm.d@mail.com');
+
+INSERT INTO Room (Room_ID, Price, typeroom) VALUES
+(101, 100, 'Single'),
+(102, 120, 'Double'),
+(103, 100, 'Double'),
+(104, 150, 'Single');
+
+INSERT INTO Reservation (Reservation_ID, Guest_ID, Room_ID, NO_of_Guest, Reservation_date) VALUES
+(1, 1, 101, 1, '2025-11-15'),
+(2, 1, 101, 1, '2025-11-16'),
+(3, 2, 102, 1, '2025-11-15'),
+(4, 3, 103, 2, '2025-11-14'),
+(5, 2, 103, 1, '2025-11-15');
+```
+
+## Queries
+
+### Retrieve All Room Types
+
+```sql
+SELECT typeroom FROM Room;
+```
+
+### Reservations Ordered by Date
+
+```sql
+SELECT Reservation_date FROM Reservation 
+ORDER BY Reservation_date DESC;
+```
+
+### Add New Guests
+
+```sql
+INSERT INTO Guest (Guest_ID, Full_name, Email) VALUES
+(4, 'Ewan Connolly', 'e.c@mail.com'),
+(5, 'Maya Evans', 'm.e@mail.com');
+```
+
+### Add New Reservation
+
+```sql
+INSERT INTO Reservation (Reservation_ID, Guest_ID, Room_ID, NO_of_Guest, Reservation_date) VALUES
+(6, 4, 104, 1, '2025-11-26');
+```
+
+### Update a Reservation Date
+
+```sql
+UPDATE Reservation
+SET Reservation_date = '2025-11-13'
+WHERE Guest_ID = 3;
+```
+
+### Average Room Price
+
+```sql
+SELECT AVG(Price) FROM Room;
+```
+
+### Rooms Priced Above €110
+
+```sql
+SELECT Room_ID, Price, typeroom FROM Room
+WHERE Price > 110;
+```
+
+### Guests with Reservations on 15th November
+
+```sql
+SELECT DISTINCT(Full_Name) FROM Guest
+INNER JOIN Reservation ON Guest.Guest_ID = Reservation.Guest_ID
+WHERE Reservation_date = '2025-11-15';
+```
+
+### All Reservations with Guest Names
+
+```sql
+SELECT Reservation_ID, Full_Name AS Total_Reservations FROM Reservation
+FULL OUTER JOIN Guest ON Reservation.Guest_ID = Guest.Guest_ID
+ORDER BY Total_Reservations DESC;
+```
+
+## Project Files
+To view the SQL file, click the link.
+[View SQL File](../projectfiles/SQLexam.sql){.btn .btn-outline-primary}
