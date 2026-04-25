@@ -1,22 +1,3 @@
----
-title: "Machine Learning Algorithm Comparison"
-toc: false
----
-
-## Overview
-
-This was a research report where I got to choose a dataset on Kaggle and 
-apply 4 classification algorithms to the dataset using Python. 
-The dataset I chose was deepfake detection data that contained various features for the 
-models to determine whether the media data was real or fake. Various pre-processing and 
-exploratory data analysis steps were needed before applying the models. 
-The results showed exceptional accuracy, but these results were reflective of the synthetic, 
-balanced nature of the dataset rather than the model's efficiency.
-
-## Libraries Used
-
-```{python}
-#| eval: false
 import pandas as pd
 import numpy as np
 import warnings
@@ -31,16 +12,8 @@ from sklearn.metrics import (
     accuracy_score, precision_score, recall_score,
     f1_score, roc_auc_score, confusion_matrix, classification_report
 )
-```
 
-## Data Preprocessing
-
-The dataset was loaded and cleaned by removing irrelevant columns. Categorical variables were 
-encoded using a Label Encoder and the target label was converted to a binary format.
-
-```{python}
-#| eval: false
-df = pd.read_excel('deepfake_detection_metadata_dataset.csv.xlsx')
+df = pd.read_excel(r'C:\Users\johnm\Documents\deepfake_detection_metadata_dataset.csv.xlsx')
 
 df = df.drop(columns=['generation_method', 'media_id'])
 
@@ -50,15 +23,7 @@ for col in categorical_cols:
     df[col] = le.fit_transform(df[col].astype(str))
 
 df['label'] = (df['label'] == 'Fake').astype(int)
-```
 
-## Feature Selection & Train/Test Split
-
-Nine features were selected based on their relevance to deepfake detection. The data was split 
-80/20 into training and test sets using stratified sampling to preserve class balance.
-
-```{python}
-#| eval: false
 FEATURES = [
     'media_type', 'content_category', 'face_count', 'audio_present',
     'lip_sync_score', 'visual_artifacts_score', 'compression_level',
@@ -68,22 +33,17 @@ FEATURES = [
 X = df[FEATURES]
 y = df['label']
 
+
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.20, random_state=42, stratify=y
 )
 
+
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled  = scaler.transform(X_test)
-```
 
-## Model Training & Evaluation
 
-Four models were trained and evaluated — Logistic Regression, Random Forest, Gradient Boosting, 
-and SVM. Each was assessed using accuracy, precision, recall, F1-score, and 5-fold cross validation.
-
-```{python}
-#| eval: false
 models = {
     'Logistic Regression': {
         'model': LogisticRegression(C=1.0, max_iter=1000, random_state=42),
@@ -111,6 +71,7 @@ for name, cfg in models.items():
     X_te   = X_test_scaled  if cfg['needs_scaling'] else X_test
 
     model.fit(X_tr, y_train)
+
     y_pred = model.predict(X_te)
     y_prob = model.predict_proba(X_te)[:, 1]
 
@@ -129,15 +90,19 @@ for name, cfg in models.items():
         'cv_std':    cv_scores.std(),
         'confusion': confusion_matrix(y_test, y_pred),
     }
-```
 
-## Feature Importance
+    print(f"\n{'─'*40}")
+    print(f"  {name}")
+    print(f"{'─'*40}")
+    print(f"  Accuracy  : {results[name]['accuracy']*100:.2f}%")
+    print(f"  Precision : {results[name]['precision']*100:.2f}%")
+    print(f"  Recall    : {results[name]['recall']*100:.2f}%")
+    print(f"  F1-Score  : {results[name]['f1']*100:.2f}%")
+    print(f"  CV F1     : {results[name]['cv_mean']*100:.2f}% ± {results[name]['cv_std']*100:.2f}%")
+    print(f"  Confusion Matrix:\n{results[name]['confusion']}")
+    print(f"\n{classification_report(y_test, y_pred, target_names=['Real','Fake'])}")
 
-The Random Forest model was used to rank the importance of each feature in predicting 
-whether media was real or fake.
 
-```{python}
-#| eval: false
 rf_model = models['Random Forest']['model']
 importances = pd.Series(rf_model.feature_importances_, index=FEATURES)
 importances_sorted = importances.sort_values(ascending=False)
@@ -145,12 +110,12 @@ importances_sorted = importances.sort_values(ascending=False)
 for feat, imp in importances_sorted.items():
     bar = '█' * int(imp * 50)
     print(f"  {feat:<35} {imp*100:5.2f}%  {bar}")
-```
 
-## Results Summary
 
-```{python}
-#| eval: false
+print("\n" + "=" * 50)
+print("SUMMARY TABLE")
+print("=" * 50)
+
 summary = pd.DataFrame({
     name: {
         'Accuracy (%)':  round(v['accuracy']  * 100, 2),
@@ -163,18 +128,3 @@ summary = pd.DataFrame({
 }).T
 
 print(summary.to_string())
-```
-
-### Model Performance Comparison
-![](../../images/model_comparison_1.jpg)
-
-### Confusion Matrices
-![](../../images/confusion_matrices_1.jpg)
-
-### Feature Importance
-![](../../images/feature_importance.jpg)
-
-## Project Files
-To view the Python file and project report, click the links.
-[View Python Script](../projectfiles/Deepfakedetection-python.py){.btn .btn-outline-primary}
-[View PDF Report](../projectfiles/ML-Comparative-Analysis.pdf){.btn .btn-outline-primary target="_blank"}

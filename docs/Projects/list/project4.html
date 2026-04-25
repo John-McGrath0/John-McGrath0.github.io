@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>project4 – John McGrath</title>
+<title>Machine Learning Algorithm Comparison – John McGrath</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -73,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -127,17 +162,189 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Machine Learning Algorithm Comparison</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This was a research report where I got to choose a dataset on Kaggle and apply 4 classification algorithms to the dataset using Python. The dataset I chose was deepfake detection data that contained various features for the models to determine whether the media data was real or fake. Various pre-processing and exploratory data analysis steps were needed before applying the models. The results showed exceptional accuracy, but these results were reflective of the synthetic, balanced nature of the dataset rather than the model’s efficiency.</p>
+</section>
+<section id="libraries-used" class="level2">
+<h2 class="anchored" data-anchor-id="libraries-used">Libraries Used</h2>
+<div id="62a50e2c" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split, StratifiedKFold, cross_val_score</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> LabelEncoder, StandardScaler</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier, GradientBoostingClassifier</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.svm <span class="im">import</span> SVC</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> (</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    accuracy_score, precision_score, recall_score,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    f1_score, roc_auc_score, confusion_matrix, classification_report</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="data-preprocessing" class="level2">
+<h2 class="anchored" data-anchor-id="data-preprocessing">Data Preprocessing</h2>
+<p>The dataset was loaded and cleaned by removing irrelevant columns. Categorical variables were encoded using a Label Encoder and the target label was converted to a binary format.</p>
+<div id="da0e7fb8" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'deepfake_detection_metadata_dataset.csv.xlsx'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'generation_method'</span>, <span class="st">'media_id'</span>])</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>categorical_cols <span class="op">=</span> [<span class="st">'media_type'</span>, <span class="st">'content_category'</span>, <span class="st">'audio_present'</span>, <span class="st">'source_platform'</span>]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>le <span class="op">=</span> LabelEncoder()</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> categorical_cols:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    df[col] <span class="op">=</span> le.fit_transform(df[col].astype(<span class="bu">str</span>))</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'label'</span>] <span class="op">=</span> (df[<span class="st">'label'</span>] <span class="op">==</span> <span class="st">'Fake'</span>).astype(<span class="bu">int</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="feature-selection-traintest-split" class="level2">
+<h2 class="anchored" data-anchor-id="feature-selection-traintest-split">Feature Selection &amp; Train/Test Split</h2>
+<p>Nine features were selected based on their relevance to deepfake detection. The data was split 80/20 into training and test sets using stratified sampling to preserve class balance.</p>
+<div id="1ab55c0b" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>FEATURES <span class="op">=</span> [</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'media_type'</span>, <span class="st">'content_category'</span>, <span class="st">'face_count'</span>, <span class="st">'audio_present'</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'lip_sync_score'</span>, <span class="st">'visual_artifacts_score'</span>, <span class="st">'compression_level'</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'lighting_inconsistency_score'</span>, <span class="st">'source_platform'</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df[FEATURES]</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">'label'</span>]</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    X, y, test_size<span class="op">=</span><span class="fl">0.20</span>, random_state<span class="op">=</span><span class="dv">42</span>, stratify<span class="op">=</span>y</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler()</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>X_train_scaled <span class="op">=</span> scaler.fit_transform(X_train)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>X_test_scaled  <span class="op">=</span> scaler.transform(X_test)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="model-training-evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="model-training-evaluation">Model Training &amp; Evaluation</h2>
+<p>Four models were trained and evaluated — Logistic Regression, Random Forest, Gradient Boosting, and SVM. Each was assessed using accuracy, precision, recall, F1-score, and 5-fold cross validation.</p>
+<div id="162f82d6" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>models <span class="op">=</span> {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Logistic Regression'</span>: {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'model'</span>: LogisticRegression(C<span class="op">=</span><span class="fl">1.0</span>, max_iter<span class="op">=</span><span class="dv">1000</span>, random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'needs_scaling'</span>: <span class="va">True</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Random Forest'</span>: {</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'model'</span>: RandomForestClassifier(n_estimators<span class="op">=</span><span class="dv">100</span>, random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'needs_scaling'</span>: <span class="va">False</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Gradient Boosting'</span>: {</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'model'</span>: GradientBoostingClassifier(n_estimators<span class="op">=</span><span class="dv">100</span>, learning_rate<span class="op">=</span><span class="fl">0.1</span>, random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'needs_scaling'</span>: <span class="va">False</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'SVM'</span>: {</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">'model'</span>: SVC(kernel<span class="op">=</span><span class="st">'rbf'</span>, C<span class="op">=</span><span class="fl">1.0</span>, probability<span class="op">=</span><span class="va">True</span>, random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">'needs_scaling'</span>: <span class="va">True</span>,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> {}</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, cfg <span class="kw">in</span> models.items():</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    model  <span class="op">=</span> cfg[<span class="st">'model'</span>]</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    X_tr   <span class="op">=</span> X_train_scaled <span class="cf">if</span> cfg[<span class="st">'needs_scaling'</span>] <span class="cf">else</span> X_train</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    X_te   <span class="op">=</span> X_test_scaled  <span class="cf">if</span> cfg[<span class="st">'needs_scaling'</span>] <span class="cf">else</span> X_test</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    model.fit(X_tr, y_train)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    y_pred <span class="op">=</span> model.predict(X_te)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    y_prob <span class="op">=</span> model.predict_proba(X_te)[:, <span class="dv">1</span>]</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    cv_scores <span class="op">=</span> cross_val_score(</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>        model, X_tr, y_train,</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>        cv<span class="op">=</span>StratifiedKFold(n_splits<span class="op">=</span><span class="dv">5</span>, shuffle<span class="op">=</span><span class="va">True</span>, random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>        scoring<span class="op">=</span><span class="st">'f1'</span>,</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>    results[name] <span class="op">=</span> {</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>        <span class="st">'accuracy'</span>:  accuracy_score(y_test, y_pred),</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>        <span class="st">'precision'</span>: precision_score(y_test, y_pred),</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>        <span class="st">'recall'</span>:    recall_score(y_test, y_pred),</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>        <span class="st">'f1'</span>:        f1_score(y_test, y_pred),</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>        <span class="st">'cv_mean'</span>:   cv_scores.mean(),</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>        <span class="st">'cv_std'</span>:    cv_scores.std(),</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>        <span class="st">'confusion'</span>: confusion_matrix(y_test, y_pred),</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>    }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="feature-importance" class="level2">
+<h2 class="anchored" data-anchor-id="feature-importance">Feature Importance</h2>
+<p>The Random Forest model was used to rank the importance of each feature in predicting whether media was real or fake.</p>
+<div id="6d8259ad" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rf_model <span class="op">=</span> models[<span class="st">'Random Forest'</span>][<span class="st">'model'</span>]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>importances <span class="op">=</span> pd.Series(rf_model.feature_importances_, index<span class="op">=</span>FEATURES)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>importances_sorted <span class="op">=</span> importances.sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> feat, imp <span class="kw">in</span> importances_sorted.items():</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    bar <span class="op">=</span> <span class="st">'█'</span> <span class="op">*</span> <span class="bu">int</span>(imp <span class="op">*</span> <span class="dv">50</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>feat<span class="sc">:&lt;35}</span><span class="ss"> </span><span class="sc">{</span>imp<span class="op">*</span><span class="dv">100</span><span class="sc">:5.2f}</span><span class="ss">%  </span><span class="sc">{</span>bar<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="results-summary" class="level2">
+<h2 class="anchored" data-anchor-id="results-summary">Results Summary</h2>
+<div id="e8051e86" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    name: {</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Accuracy (%)'</span>:  <span class="bu">round</span>(v[<span class="st">'accuracy'</span>]  <span class="op">*</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Precision (%)'</span>: <span class="bu">round</span>(v[<span class="st">'precision'</span>] <span class="op">*</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Recall (%)'</span>:    <span class="bu">round</span>(v[<span class="st">'recall'</span>]    <span class="op">*</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'F1-Score (%)'</span>:  <span class="bu">round</span>(v[<span class="st">'f1'</span>]        <span class="op">*</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'CV F1 (%)'</span>:     <span class="bu">round</span>(v[<span class="st">'cv_mean'</span>]   <span class="op">*</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, v <span class="kw">in</span> results.items()</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>}).T</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(summary.to_string())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="model-performance-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="model-performance-comparison">Model Performance Comparison</h3>
+<p><img src="../../images/model_comparison_1.jpg" class="img-fluid"></p>
+</section>
+<section id="confusion-matrices" class="level3">
+<h3 class="anchored" data-anchor-id="confusion-matrices">Confusion Matrices</h3>
+<p><img src="../../images/confusion_matrices_1.jpg" class="img-fluid"></p>
+</section>
+<section id="feature-importance-1" class="level3">
+<h3 class="anchored" data-anchor-id="feature-importance-1">Feature Importance</h3>
+<p><img src="../../images/feature_importance.jpg" class="img-fluid"></p>
+</section>
+</section>
+<section id="project-files" class="level2">
+<h2 class="anchored" data-anchor-id="project-files">Project Files</h2>
+<p>To view the Python file and project report, click the links. <a href="../projectfiles/Deepfakedetection-python.py" class="btn btn-outline-primary">View Python Script</a> <a href="../projectfiles/ML-Comparative-Analysis.pdf" class="btn btn-outline-primary" target="_blank">View PDF Report</a></p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

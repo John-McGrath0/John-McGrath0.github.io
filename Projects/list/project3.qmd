@@ -1,0 +1,16 @@
+---
+title: "Airline Booking Policy"
+toc: false
+---
+
+## Overview
+
+A group project with 3 other students, all done in Excel. 
+We were given data about an airline company and some assumptions about their demand and profit. 
+Using this, we had to generate a Monte Carlo simulation to simulate the impact on 
+profits of different overbooking strategies and then determine the optimal strategy for the airline.
+
+## Project Files
+
+To view the Excel file containing the simulation, click the link.
+[View Excel File](../projectfiles/Airlinebooking-policy.xlsx){.btn .btn-outline-primary}
