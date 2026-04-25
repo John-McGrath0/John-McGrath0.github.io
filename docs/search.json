@@ -1,0 +1,282 @@
+[
+  {
+    "objectID": "reflection.html",
+    "href": "reflection.html",
+    "title": "Reflection",
+    "section": "",
+    "text": "The process of creating my E-portfolio has been a very interesting and rewarding experience. At the beginning of the module, I felt out of my depth because everything we were learning was unfamiliar to me. Seeing examples of previous students’ e-portfolios made me wonder how I would ever get to the level displayed in those examples by using HTML, CSS, GitHub, and Quarto.\nThankfully, week by week through the lectures, all these things started to make more sense, and things began to fall into place. The interactive nature of the classes was a big help. Every class, we got time to execute tasks that were important to building our e-portfolio, and we could ask Damien for help if we needed it, and then he would demonstrate to the class how to do it correctly.\nWith the help of the lecture slides, I was able to start to build from the ground up and, taking inspiration from previous examples, I had the necessary knowledge to create my website as I had envisioned it.\nGoing forward, I hope to leverage not only the skills I learned from this process but also its outcome - my website, to showcase to employers my projects, skills, and experiences. I intend to keep this portfolio up to date and carry it with me throughout my professional career."
+  },
+  {
+    "objectID": "reflection.html#e-portfolio-reflection",
+    "href": "reflection.html#e-portfolio-reflection",
+    "title": "Reflection",
+    "section": "",
+    "text": "The process of creating my E-portfolio has been a very interesting and rewarding experience. At the beginning of the module, I felt out of my depth because everything we were learning was unfamiliar to me. Seeing examples of previous students’ e-portfolios made me wonder how I would ever get to the level displayed in those examples by using HTML, CSS, GitHub, and Quarto.\nThankfully, week by week through the lectures, all these things started to make more sense, and things began to fall into place. The interactive nature of the classes was a big help. Every class, we got time to execute tasks that were important to building our e-portfolio, and we could ask Damien for help if we needed it, and then he would demonstrate to the class how to do it correctly.\nWith the help of the lecture slides, I was able to start to build from the ground up and, taking inspiration from previous examples, I had the necessary knowledge to create my website as I had envisioned it.\nGoing forward, I hope to leverage not only the skills I learned from this process but also its outcome - my website, to showcase to employers my projects, skills, and experiences. I intend to keep this portfolio up to date and carry it with me throughout my professional career."
+  },
+  {
+    "objectID": "Projects/list/project5.html",
+    "href": "Projects/list/project5.html",
+    "title": "SQL exam: Hotel booking system",
+    "section": "",
+    "text": "This SQL database was created for an exam. It involved designing and implementing a relational database for a hotel reservation system called Bookify. The database was built using SQL and covers core operations such as managing guests, rooms, and reservations. It demonstrates the use of table creation, data insertion, joins, and aggregate functions."
+  },
+  {
+    "objectID": "Projects/list/project5.html#overview",
+    "href": "Projects/list/project5.html#overview",
+    "title": "SQL exam: Hotel booking system",
+    "section": "",
+    "text": "This SQL database was created for an exam. It involved designing and implementing a relational database for a hotel reservation system called Bookify. The database was built using SQL and covers core operations such as managing guests, rooms, and reservations. It demonstrates the use of table creation, data insertion, joins, and aggregate functions."
+  },
+  {
+    "objectID": "Projects/list/project5.html#database-setup",
+    "href": "Projects/list/project5.html#database-setup",
+    "title": "SQL exam: Hotel booking system",
+    "section": "Database Setup",
+    "text": "Database Setup\nThe database was created and three core tables were defined — Guest, Room, and Reservation. Foreign keys were used to link reservations to both guests and rooms.\nCREATE DATABASE BookifyDB0;\n\nCREATE TABLE Guest (\n    Guest_ID INT PRIMARY KEY,\n    Full_name VARCHAR(30),\n    Email VARCHAR(30)\n);\n\nCREATE TABLE Room (\n    Room_ID INT PRIMARY KEY,\n    Price FLOAT,\n    typeroom VARCHAR(10)\n);\n\nCREATE TABLE Reservation (\n    Reservation_ID INT PRIMARY KEY,\n    Guest_ID INT,\n    Room_ID INT,\n    NO_of_Guest INT,\n    Reservation_date DATE,\n    FOREIGN KEY (Guest_ID) REFERENCES Guest (Guest_ID),\n    FOREIGN KEY (Room_ID) REFERENCES Room (Room_ID)\n);"
+  },
+  {
+    "objectID": "Projects/list/project5.html#inserting-data",
+    "href": "Projects/list/project5.html#inserting-data",
+    "title": "SQL exam: Hotel booking system",
+    "section": "Inserting Data",
+    "text": "Inserting Data\nSample data was inserted into each table to populate the database for querying.\nINSERT INTO Guest (Guest_ID, Full_name, Email) VALUES\n(1, 'Alex Smith', 'a.s@mail.com'),\n(2, 'Bobby Johnson', 'b.j@mail.com'),\n(3, 'Mike Davis', 'm.d@mail.com');\n\nINSERT INTO Room (Room_ID, Price, typeroom) VALUES\n(101, 100, 'Single'),\n(102, 120, 'Double'),\n(103, 100, 'Double'),\n(104, 150, 'Single');\n\nINSERT INTO Reservation (Reservation_ID, Guest_ID, Room_ID, NO_of_Guest, Reservation_date) VALUES\n(1, 1, 101, 1, '2025-11-15'),\n(2, 1, 101, 1, '2025-11-16'),\n(3, 2, 102, 1, '2025-11-15'),\n(4, 3, 103, 2, '2025-11-14'),\n(5, 2, 103, 1, '2025-11-15');"
+  },
+  {
+    "objectID": "Projects/list/project5.html#queries",
+    "href": "Projects/list/project5.html#queries",
+    "title": "SQL exam: Hotel booking system",
+    "section": "Queries",
+    "text": "Queries\n\nRetrieve All Room Types\nSELECT typeroom FROM Room;\n\n\nReservations Ordered by Date\nSELECT Reservation_date FROM Reservation \nORDER BY Reservation_date DESC;\n\n\nAdd New Guests\nINSERT INTO Guest (Guest_ID, Full_name, Email) VALUES\n(4, 'Ewan Connolly', 'e.c@mail.com'),\n(5, 'Maya Evans', 'm.e@mail.com');\n\n\nAdd New Reservation\nINSERT INTO Reservation (Reservation_ID, Guest_ID, Room_ID, NO_of_Guest, Reservation_date) VALUES\n(6, 4, 104, 1, '2025-11-26');\n\n\nUpdate a Reservation Date\nUPDATE Reservation\nSET Reservation_date = '2025-11-13'\nWHERE Guest_ID = 3;\n\n\nAverage Room Price\nSELECT AVG(Price) FROM Room;\n\n\nRooms Priced Above €110\nSELECT Room_ID, Price, typeroom FROM Room\nWHERE Price &gt; 110;\n\n\nGuests with Reservations on 15th November\nSELECT DISTINCT(Full_Name) FROM Guest\nINNER JOIN Reservation ON Guest.Guest_ID = Reservation.Guest_ID\nWHERE Reservation_date = '2025-11-15';\n\n\nAll Reservations with Guest Names\nSELECT Reservation_ID, Full_Name AS Total_Reservations FROM Reservation\nFULL OUTER JOIN Guest ON Reservation.Guest_ID = Guest.Guest_ID\nORDER BY Total_Reservations DESC;"
+  },
+  {
+    "objectID": "Projects/list/project5.html#project-files",
+    "href": "Projects/list/project5.html#project-files",
+    "title": "SQL exam: Hotel booking system",
+    "section": "Project Files",
+    "text": "Project Files\nTo view the SQL file, click the link. View SQL File"
+  },
+  {
+    "objectID": "Projects/list/project3.html",
+    "href": "Projects/list/project3.html",
+    "title": "Airline Booking Policy",
+    "section": "",
+    "text": "A group project with 3 other students, all done in Excel. We were given data about an airline company and some assumptions about their demand and profit. Using this, we had to generate a Monte Carlo simulation to simulate the impact on profits of different overbooking strategies and then determine the optimal strategy for the airline."
+  },
+  {
+    "objectID": "Projects/list/project3.html#overview",
+    "href": "Projects/list/project3.html#overview",
+    "title": "Airline Booking Policy",
+    "section": "",
+    "text": "A group project with 3 other students, all done in Excel. We were given data about an airline company and some assumptions about their demand and profit. Using this, we had to generate a Monte Carlo simulation to simulate the impact on profits of different overbooking strategies and then determine the optimal strategy for the airline."
+  },
+  {
+    "objectID": "Projects/list/project3.html#project-files",
+    "href": "Projects/list/project3.html#project-files",
+    "title": "Airline Booking Policy",
+    "section": "Project Files",
+    "text": "Project Files\nTo view the Excel file containing the simulation, click the link. View Excel File"
+  },
+  {
+    "objectID": "Projects/list/project1.html",
+    "href": "Projects/list/project1.html",
+    "title": "Company Valuation",
+    "section": "",
+    "text": "This was a group project that I did while on Erasmus in a corporate finance module. I was in a group with one other student, and we were assigned to a company in the computer hardware industry: Supermicro. We had to conduct a financial analysis of the company and then perform a relative valuation using market multiples and a discounted cash flow."
+  },
+  {
+    "objectID": "Projects/list/project1.html#overview",
+    "href": "Projects/list/project1.html#overview",
+    "title": "Company Valuation",
+    "section": "",
+    "text": "This was a group project that I did while on Erasmus in a corporate finance module. I was in a group with one other student, and we were assigned to a company in the computer hardware industry: Supermicro. We had to conduct a financial analysis of the company and then perform a relative valuation using market multiples and a discounted cash flow."
+  },
+  {
+    "objectID": "Projects/list/project1.html#project-files",
+    "href": "Projects/list/project1.html#project-files",
+    "title": "Company Valuation",
+    "section": "Project Files",
+    "text": "Project Files\nto view the full report and Excel file with our calculations, click the links. View Excel File View PDF Report"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "John McGrath",
+    "section": "",
+    "text": "Welcome to my e-portfolio. On this website you will find a collection of my projects, skills, and experiences from my time in university and beyond.\nWhether you’re a potential employer, collaborator, or just curious - I hope you find something interesting.\nFeel free to explore my work, learn about me, or get in touch!"
+  },
+  {
+    "objectID": "baa1028-lecture/test/Projects/index.html",
+    "href": "baa1028-lecture/test/Projects/index.html",
+    "title": "My projects",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "baa1028-lecture/test/about.html",
+    "href": "baa1028-lecture/test/about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "baa1028-lecture/index.html",
+    "href": "baa1028-lecture/index.html",
+    "title": "home",
+    "section": "",
+    "text": "this is a quarto website"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "John McGrath",
+    "section": "",
+    "text": "My name is John McGrath, I am 22 years of age, from Dublin, and I am a final year business studies student in DCU, specialising in data analytics. I am due to graduate in October 2026 with a second-class honours degree.\nI am hoping to begin my professional career working in the field of business analytics. Over the course of my studies, I developed a strong interest in this field. What began as an introduction to the topic in first and second year quickly grew into a passion for uncovering insights from raw data and using them to drive better business decisions.\nDuring my degree, I was fortunate enough to partake in a full-year Erasmus programme, where I studied in the University of Porto’s School of Economics and Management for my third year. During my studies here, I was able to further develop my technical skills through modules like business analytics and information management, where I learned a number of valuable analytical skills. On top of academic progression, this experience helped to deepen my cultural understanding and appreciation and overall, it was hugely beneficial for my personal development.\nOutside of university, my main passion is sports. I have been involved in sports for my whole life. I have tried many different sports over the years, and I currently play Gaelic Football and soccer, and I go to the gym. My love for sport is reflected in my current part-time job. I work for Experience Gaelic Games, where I teach tourists how to play football, hurling and handball. This is a unique opportunity, as I get to represent Irish culture and share it with people from all over the world."
+  },
+  {
+    "objectID": "about.html#about-me",
+    "href": "about.html#about-me",
+    "title": "John McGrath",
+    "section": "",
+    "text": "My name is John McGrath, I am 22 years of age, from Dublin, and I am a final year business studies student in DCU, specialising in data analytics. I am due to graduate in October 2026 with a second-class honours degree.\nI am hoping to begin my professional career working in the field of business analytics. Over the course of my studies, I developed a strong interest in this field. What began as an introduction to the topic in first and second year quickly grew into a passion for uncovering insights from raw data and using them to drive better business decisions.\nDuring my degree, I was fortunate enough to partake in a full-year Erasmus programme, where I studied in the University of Porto’s School of Economics and Management for my third year. During my studies here, I was able to further develop my technical skills through modules like business analytics and information management, where I learned a number of valuable analytical skills. On top of academic progression, this experience helped to deepen my cultural understanding and appreciation and overall, it was hugely beneficial for my personal development.\nOutside of university, my main passion is sports. I have been involved in sports for my whole life. I have tried many different sports over the years, and I currently play Gaelic Football and soccer, and I go to the gym. My love for sport is reflected in my current part-time job. I work for Experience Gaelic Games, where I teach tourists how to play football, hurling and handball. This is a unique opportunity, as I get to represent Irish culture and share it with people from all over the world."
+  },
+  {
+    "objectID": "about.html#data-analytics-skills",
+    "href": "about.html#data-analytics-skills",
+    "title": "John McGrath",
+    "section": "Data Analytics Skills",
+    "text": "Data Analytics Skills\nThese are the technical skills I have learned in my time in university.\n\n\n\n\nPython\nOver the past year, I have gained a strong foundation in Python, gaining hands-on experience with core concepts, including the language basics, control flow through conditional statements and loops, and working with key data structures. This foundation will enable me to apply my skills effectively while continuing to develop further abilities.\n\n\n\n\n\nSQL\nI have developed a comprehensive understanding of SQL and the core skills required to work effectively with relational databases. This includes the ability to design and interpret ERDs, create databases and tables, and write queries using a range of join clauses to retrieve and manipulate data across multiple tables.\n\n\n\n\n\nPowerBI\nPower BI has helped me to develop a strong understanding of data visualisation. It helped me learn the necessary skills to turn raw data into clear, understandable insights. This includes building interactive dashboards and reports, and applying visualisation best practices to present data in a way that is both accessible and impactful.\n\n\n\n\n\nExcel\nHaving worked with Excel since my first year, I have developed a strong proficiency in the application over time. This experience has given me a thorough command of its core features, including data organisation, formulas, functions, and charting, as well as more advanced capabilities such as pivot tables and data analysis tools.\n\n\n\n\n\nMicrosoft Access\nI have developed a solid understanding of Microsoft Access and its role as a relational database management tool. This includes creating and managing databases, designing tables and defining relationships between them, and building queries to extract and manipulate data.\n\n\n\n\n\nR\nAlthough this is an area I need to work on, I have developed a solid foundation in R, gaining experience in using it as a tool for analysis and data exploration. This includes working with data structures such as vectors, data frames, and lists."
+  },
+  {
+    "objectID": "baa1028-lecture/about.html",
+    "href": "baa1028-lecture/about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "baa1028-lecture/Projects/index.html",
+    "href": "baa1028-lecture/Projects/index.html",
+    "title": "projects",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+  },
+  {
+    "objectID": "baa1028-lecture/test/index.html",
+    "href": "baa1028-lecture/test/index.html",
+    "title": "test",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n[Learn about my projects -&gt;]"
+  },
+  {
+    "objectID": "Projects/index.html",
+    "href": "Projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Below is a collection of projects completed throughout my degree.\n\n\n\n  \n    \n    \n      Company Valuation\n      Analysis of Supermicro Computer as well as relative valuation and discounted cash flow\n    \n  \n\n  \n    \n    \n      PowerBI presentation\n      Converting sales data into clear visualisations using PowerBI\n    \n  \n\n  \n    \n    \n      Airline Booking Policy\n      Generating a monte carlo simulation using Excel to determine an airlines optimal booking strategy\n    \n  \n\n  \n    \n    \n      ML algorithm comparison\n      Applying ML classification models to a deepfake detection dataset using python\n    \n  \n\n\n    \n    \n      SQL exam\n      Database for a bookstore used for an SQL exam\n    \n   \n\n\n    \n    \n      Lyten case report\n      Business strategy case study for Lyten's acquisition of Northvolt"
+  },
+  {
+    "objectID": "Projects/list/project2.html",
+    "href": "Projects/list/project2.html",
+    "title": "Agrifoods Dashboard",
+    "section": "",
+    "text": "This was a group project I did with five other students using Power BI. The objective was to take data from an Excel spreadsheet containing information about a fictional company called Agrifoods. We then had to upload the data to Power BI, where we could create visualisations and generate insights about the crucial information contained in the spreadsheet."
+  },
+  {
+    "objectID": "Projects/list/project2.html#overview",
+    "href": "Projects/list/project2.html#overview",
+    "title": "Agrifoods Dashboard",
+    "section": "",
+    "text": "This was a group project I did with five other students using Power BI. The objective was to take data from an Excel spreadsheet containing information about a fictional company called Agrifoods. We then had to upload the data to Power BI, where we could create visualisations and generate insights about the crucial information contained in the spreadsheet."
+  },
+  {
+    "objectID": "Projects/list/project2.html#project-files",
+    "href": "Projects/list/project2.html#project-files",
+    "title": "Agrifoods Dashboard",
+    "section": "Project Files",
+    "text": "Project Files\nTo view the report and the Power BI dashboards, click the links. View Dashboard View PDF Report"
+  },
+  {
+    "objectID": "Projects/list/project4.html",
+    "href": "Projects/list/project4.html",
+    "title": "Machine Learning Algorithm Comparison",
+    "section": "",
+    "text": "This was a research report where I got to choose a dataset on Kaggle and apply 4 classification algorithms to the dataset using Python. The dataset I chose was deepfake detection data that contained various features for the models to determine whether the media data was real or fake. Various pre-processing and exploratory data analysis steps were needed before applying the models. The results showed exceptional accuracy, but these results were reflective of the synthetic, balanced nature of the dataset rather than the model’s efficiency."
+  },
+  {
+    "objectID": "Projects/list/project4.html#overview",
+    "href": "Projects/list/project4.html#overview",
+    "title": "Machine Learning Algorithm Comparison",
+    "section": "",
+    "text": "This was a research report where I got to choose a dataset on Kaggle and apply 4 classification algorithms to the dataset using Python. The dataset I chose was deepfake detection data that contained various features for the models to determine whether the media data was real or fake. Various pre-processing and exploratory data analysis steps were needed before applying the models. The results showed exceptional accuracy, but these results were reflective of the synthetic, balanced nature of the dataset rather than the model’s efficiency."
+  },
+  {
+    "objectID": "Projects/list/project4.html#libraries-used",
+    "href": "Projects/list/project4.html#libraries-used",
+    "title": "Machine Learning Algorithm Comparison",
+    "section": "Libraries Used",
+    "text": "Libraries Used\n\nimport pandas as pd\nimport numpy as np\nimport warnings\nwarnings.filterwarnings('ignore')\n\nfrom sklearn.model_selection import train_test_split, StratifiedKFold, cross_val_score\nfrom sklearn.preprocessing import LabelEncoder, StandardScaler\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier\nfrom sklearn.svm import SVC\nfrom sklearn.metrics import (\n    accuracy_score, precision_score, recall_score,\n    f1_score, roc_auc_score, confusion_matrix, classification_report\n)"
+  },
+  {
+    "objectID": "Projects/list/project4.html#data-preprocessing",
+    "href": "Projects/list/project4.html#data-preprocessing",
+    "title": "Machine Learning Algorithm Comparison",
+    "section": "Data Preprocessing",
+    "text": "Data Preprocessing\nThe dataset was loaded and cleaned by removing irrelevant columns. Categorical variables were encoded using a Label Encoder and the target label was converted to a binary format.\n\ndf = pd.read_excel('deepfake_detection_metadata_dataset.csv.xlsx')\n\ndf = df.drop(columns=['generation_method', 'media_id'])\n\ncategorical_cols = ['media_type', 'content_category', 'audio_present', 'source_platform']\nle = LabelEncoder()\nfor col in categorical_cols:\n    df[col] = le.fit_transform(df[col].astype(str))\n\ndf['label'] = (df['label'] == 'Fake').astype(int)"
+  },
+  {
+    "objectID": "Projects/list/project4.html#feature-selection-traintest-split",
+    "href": "Projects/list/project4.html#feature-selection-traintest-split",
+    "title": "Machine Learning Algorithm Comparison",
+    "section": "Feature Selection & Train/Test Split",
+    "text": "Feature Selection & Train/Test Split\nNine features were selected based on their relevance to deepfake detection. The data was split 80/20 into training and test sets using stratified sampling to preserve class balance.\n\nFEATURES = [\n    'media_type', 'content_category', 'face_count', 'audio_present',\n    'lip_sync_score', 'visual_artifacts_score', 'compression_level',\n    'lighting_inconsistency_score', 'source_platform'\n]\n\nX = df[FEATURES]\ny = df['label']\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.20, random_state=42, stratify=y\n)\n\nscaler = StandardScaler()\nX_train_scaled = scaler.fit_transform(X_train)\nX_test_scaled  = scaler.transform(X_test)"
+  },
+  {
+    "objectID": "Projects/list/project4.html#model-training-evaluation",
+    "href": "Projects/list/project4.html#model-training-evaluation",
+    "title": "Machine Learning Algorithm Comparison",
+    "section": "Model Training & Evaluation",
+    "text": "Model Training & Evaluation\nFour models were trained and evaluated — Logistic Regression, Random Forest, Gradient Boosting, and SVM. Each was assessed using accuracy, precision, recall, F1-score, and 5-fold cross validation.\n\nmodels = {\n    'Logistic Regression': {\n        'model': LogisticRegression(C=1.0, max_iter=1000, random_state=42),\n        'needs_scaling': True,\n    },\n    'Random Forest': {\n        'model': RandomForestClassifier(n_estimators=100, random_state=42),\n        'needs_scaling': False,\n    },\n    'Gradient Boosting': {\n        'model': GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, random_state=42),\n        'needs_scaling': False,\n    },\n    'SVM': {\n        'model': SVC(kernel='rbf', C=1.0, probability=True, random_state=42),\n        'needs_scaling': True,\n    },\n}\n\nresults = {}\n\nfor name, cfg in models.items():\n    model  = cfg['model']\n    X_tr   = X_train_scaled if cfg['needs_scaling'] else X_train\n    X_te   = X_test_scaled  if cfg['needs_scaling'] else X_test\n\n    model.fit(X_tr, y_train)\n    y_pred = model.predict(X_te)\n    y_prob = model.predict_proba(X_te)[:, 1]\n\n    cv_scores = cross_val_score(\n        model, X_tr, y_train,\n        cv=StratifiedKFold(n_splits=5, shuffle=True, random_state=42),\n        scoring='f1',\n    )\n\n    results[name] = {\n        'accuracy':  accuracy_score(y_test, y_pred),\n        'precision': precision_score(y_test, y_pred),\n        'recall':    recall_score(y_test, y_pred),\n        'f1':        f1_score(y_test, y_pred),\n        'cv_mean':   cv_scores.mean(),\n        'cv_std':    cv_scores.std(),\n        'confusion': confusion_matrix(y_test, y_pred),\n    }"
+  },
+  {
+    "objectID": "Projects/list/project4.html#feature-importance",
+    "href": "Projects/list/project4.html#feature-importance",
+    "title": "Machine Learning Algorithm Comparison",
+    "section": "Feature Importance",
+    "text": "Feature Importance\nThe Random Forest model was used to rank the importance of each feature in predicting whether media was real or fake.\n\nrf_model = models['Random Forest']['model']\nimportances = pd.Series(rf_model.feature_importances_, index=FEATURES)\nimportances_sorted = importances.sort_values(ascending=False)\n\nfor feat, imp in importances_sorted.items():\n    bar = '█' * int(imp * 50)\n    print(f\"  {feat:&lt;35} {imp*100:5.2f}%  {bar}\")"
+  },
+  {
+    "objectID": "Projects/list/project4.html#results-summary",
+    "href": "Projects/list/project4.html#results-summary",
+    "title": "Machine Learning Algorithm Comparison",
+    "section": "Results Summary",
+    "text": "Results Summary\n\nsummary = pd.DataFrame({\n    name: {\n        'Accuracy (%)':  round(v['accuracy']  * 100, 2),\n        'Precision (%)': round(v['precision'] * 100, 2),\n        'Recall (%)':    round(v['recall']    * 100, 2),\n        'F1-Score (%)':  round(v['f1']        * 100, 2),\n        'CV F1 (%)':     round(v['cv_mean']   * 100, 2),\n    }\n    for name, v in results.items()\n}).T\n\nprint(summary.to_string())\n\n\nModel Performance Comparison\n\n\n\nConfusion Matrices\n\n\n\nFeature Importance"
+  },
+  {
+    "objectID": "Projects/list/project4.html#project-files",
+    "href": "Projects/list/project4.html#project-files",
+    "title": "Machine Learning Algorithm Comparison",
+    "section": "Project Files",
+    "text": "Project Files\nTo view the Python file and project report, click the links. View Python Script View PDF Report"
+  },
+  {
+    "objectID": "Projects/list/project6.html",
+    "href": "Projects/list/project6.html",
+    "title": "Case Study: Lyten Strategy Report",
+    "section": "",
+    "text": "This project was a business strategy report on a specific case study: Californian battery start-up, Lyten’s acquisition of bankrupt Swedish battery manufacturer, Northvolt. The report had three main aspects to address: firstly, what were the main strategic issues that Lyten were facing in the wake of their acquisition. Secondly, determine whether their acquisition reflected a coherent internationalization strategy or premature global scaling. And finally, evaluate the trade-off between geopolitical alignment and commercial flexibility presented in the case."
+  },
+  {
+    "objectID": "Projects/list/project6.html#overview",
+    "href": "Projects/list/project6.html#overview",
+    "title": "Case Study: Lyten Strategy Report",
+    "section": "",
+    "text": "This project was a business strategy report on a specific case study: Californian battery start-up, Lyten’s acquisition of bankrupt Swedish battery manufacturer, Northvolt. The report had three main aspects to address: firstly, what were the main strategic issues that Lyten were facing in the wake of their acquisition. Secondly, determine whether their acquisition reflected a coherent internationalization strategy or premature global scaling. And finally, evaluate the trade-off between geopolitical alignment and commercial flexibility presented in the case."
+  },
+  {
+    "objectID": "Projects/list/project6.html#project-files",
+    "href": "Projects/list/project6.html#project-files",
+    "title": "Case Study: Lyten Strategy Report",
+    "section": "Project Files",
+    "text": "Project Files\nTo view the full report, click the link. View PDF Report"
+  }
+]

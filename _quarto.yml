@@ -18,7 +18,7 @@ website:
     - href: Projects/index.qmd
       text: Projects
       icon: folder
-    - href: Reflection.qmd
+    - href: reflection.qmd
       text: Reflection
       icon: journal-text
     - href: JohnMcGrathCV1.pdf
