@@ -4,10 +4,10 @@ project:
 
 website:
   title: "John McGrath"
-  favicon: favicon-32x32.png
+  favicon: Images/favicon-32x32.png
   navbar:
     title: false
-    logo: logo_transparent.png
+    logo: Images/logo_transparent.png
     right:
     - href: index.qmd
       text: Home
